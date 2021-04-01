@@ -4,19 +4,20 @@ instance=$3
 db=$4
 scripts=$5
 
-while read file
+#while read file
 
-do
+#do
 
         #echo "sqlcmd -U yxgrr -P password -S sql_instance -d Brim_Jenkins -i $file -e >> ${file}.out"
         #echo "Checking output file ${file}.out"
         #echo "sqlcmd -U ${SQLUSERNAME} -P ${sqlpass} -S ${SQLINST} -d ${DBNAME} -i JenkinsTestTable.sql -e > JenkinsTestTable_load_exec_log_FIXED.txt"
-        sqlcmd -U $user -P $pw -S $instance -d $db -i "$file" -e > JenkinsTestTable_load_exec_log_FIXED.txt
+        #sqlcmd -U $user -P $pw -S $instance -d $db -i "$file" -e > JenkinsTestTable_load_exec_log_FIXED.txt
 
-done < $scripts
+#done < $scripts
 
-#cat $scripts | while read line 
-#do
+cat $scripts | while read line 
+do
    #     echo "sqlcmd -U ${SQLUSERNAME} -P ${sqlpass} -S ${SQLINST} -d ${DBNAME} -i JenkinsTestTable.sql -e > JenkinsTestTable_load_exec_log_FIXED.txt"
-    #    sqlcmd -U ${SQLUSERNAME} -P ${sqlpass} -S ${SQLINST} -d ${DBNAME} -i "$file" -e > JenkinsTestTable_load_exec_log_FIXED.txt
-#done
+        sqlcmd -U $user -P $pw -S $instance -d $db -i "$file" -e > JenkinsTestTable_load_exec_log_FIXED.txt
+        echo "done"
+done
