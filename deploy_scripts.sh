@@ -9,9 +9,11 @@ do
         if [[ $error ]]; then
                 echo "There was an error after executing the SQL script. View ${line}.out for details... EXITING!..."
                 echo "----------------------------------------------------------------------------------------------"
+                echo ""
                 exit 1
         else
                 echo "No errors... Moving on..."
                 echo "----------------------------------------------------------------------------------------------"
+                echo ""
         fi
 done
