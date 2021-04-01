@@ -20,6 +20,6 @@ do
    #     echo "sqlcmd -U ${SQLUSERNAME} -P ${sqlpass} -S ${SQLINST} -d ${DBNAME} -i JenkinsTestTable.sql -e > JenkinsTestTable_load_exec_log_FIXED.txt"
         echo "Running script ${line}......"
         echo "----------------------------------------------------------------------------"
-        sqlcmd -U ${SQLUSERNAME} -P ${SQLPASS} -S ${SQLINST} -d ${DBNAME} -i ${line} -m -e > ${line}.out
+        sqlcmd -U ${SQLUSERNAME} -P ${SQLPASS} -S ${SQLINST} -d ${DBNAME} -i ${line} -e > ${line}.out
         
 done
