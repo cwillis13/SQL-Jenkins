@@ -21,5 +21,5 @@ do
         echo "Running script ${line}......"
         echo "----------------------------------------------------------------------------"
         sqlcmd -U ${SQLUSERNAME} -P ${SQLPASS} -S ${SQLINST} -d ${DBNAME} -i ${line} -e > ${line}.out
-        
+        check_output.sh ${line}.out
 done
