@@ -18,6 +18,8 @@
 cat ${INI} | while read line 
 do
    #     echo "sqlcmd -U ${SQLUSERNAME} -P ${sqlpass} -S ${SQLINST} -d ${DBNAME} -i JenkinsTestTable.sql -e > JenkinsTestTable_load_exec_log_FIXED.txt"
-        sqlcmd -U ${SQLUSERNAME} -P ${SQLPASS} -S ${SQLINST} -d ${DBNAME} -i ${line} -e > ${line}.out
-        echo "done"
+        echo "Running script ${line}......
+        echo "----------------------------------------------------------------------------"
+        sqlcmd -U ${SQLUSERNAME} -P ${SQLPASS} -S ${SQLINST} -d ${DBNAME} -i ${line} -m -e > ${line}.out
+        
 done
