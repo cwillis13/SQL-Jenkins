@@ -9,8 +9,12 @@ do
 
         if [[ $error ]]; then
                 echo "There was an error after executing the SQL script... EXITING!..."
+                echo "----------------------------------------------------------------------------"
                 exit
         else
-                echo "No errors... Moving to next script execution..."
+                echo "No errors... Moving on..."
+                echo "----------------------------------------------------------------------------"
         fi
 done
+
+echo "Finished with script deployments..."
