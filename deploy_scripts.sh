@@ -1,3 +1,5 @@
+sqlcmd -U ${SQLSECADM} -P ${SQLSECPASS} -S ${SQLINST} -Q "execute msdb.dbo.sp_start_job @job_name='Grant Jenkins DDL_Admin'"
+
 cat ${INI} | while read line 
 do
         echo "Running script ${line}......"
@@ -17,3 +19,5 @@ do
                 echo ""
         fi
 done
+
+sqlcmd -U ${SQLSECADM} -P ${SQLSECPASS} -S ${SQLINST} -Q "execute msdb.dbo.sp_start_job @job_name='Revoke Jenkins DDL_Admin'"
